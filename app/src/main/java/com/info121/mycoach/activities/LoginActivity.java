@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.info121.mycoach.AbstractActivity;
@@ -55,6 +56,12 @@ public class LoginActivity extends AbstractActivity {
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
 
+    @BindView(R.id.api_version)
+    TextView mApiVersion;
+
+    @BindView(R.id.ui_version)
+    TextView mUiVersion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +77,9 @@ public class LoginActivity extends AbstractActivity {
         }
 
         callCheckVersion();
+
+        mApiVersion.setText("Api " + Util.getVersionCode(mContext));
+        mUiVersion.setText("Ver " + Util.getVersionName(mContext));
 
     }
 

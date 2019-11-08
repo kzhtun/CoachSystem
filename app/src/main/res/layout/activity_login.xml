@@ -88,7 +88,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Remember Me"
-                    android:textColor="@color/oil" />
+                    android:buttonTint="@color/base"
+                    android:textColor="@color/base" />
 
             </LinearLayout>
 

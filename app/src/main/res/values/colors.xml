@@ -38,8 +38,8 @@
     <color name="normal_button">#0082E4</color>
     <color name="normal_button_stroke">#0082E4</color>
 
-    <color name="edit_text_color">#ffffff</color>
-    <color name="edit_text_background">#555555</color>
+    <color name="edit_text_color">#333333</color>
+    <color name="edit_text_background">#efefef</color>
     <!--    <color name="background">#c9d7e5</color>-->
     <color name="background">#222222</color>
 

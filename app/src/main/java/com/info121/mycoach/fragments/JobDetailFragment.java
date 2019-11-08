@@ -39,8 +39,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
-import com.info121.mycoach.R;
 import com.info121.mycoach.AbstractFragment;
+import com.info121.mycoach.R;
+
 import com.info121.mycoach.App;
 import com.info121.mycoach.api.RestClient;
 import com.info121.mycoach.models.Action;
@@ -444,16 +445,29 @@ public class JobDetailFragment extends AbstractFragment {
         dialog.setTitle("");
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+        // Inititalize Label
+        clear = dialog.findViewById(R.id.clear);
+        done = dialog.findViewById(R.id.done);
+        photoLabel = dialog.findViewById(R.id.photo_label);
+        signatureLabel = dialog.findViewById(R.id.signature_label);
+        signaturePad = dialog.findViewById(R.id.signature_pad);
+        addPhoto = dialog.findViewById(R.id.add_photo);
+        passengerPhoto = dialog.findViewById(R.id.passenger_photo);
         TextView title = dialog.findViewById(R.id.title);
         TextView label = dialog.findViewById(R.id.photo_label);
         TextView remarks = dialog.findViewById(R.id.remarks);
-        ImageView addPhoto = dialog.findViewById(R.id.add_photo);
-        ImageView passengerPhoto = dialog.findViewById(R.id.passenger_photo);
+
         Button save = dialog.findViewById(R.id.save);
 
         title.setText("PASSENGER NO SHOW");
         label.setText("PHOTO");
         remarks.setText(job.getNoShowRemarks());
+
+        // hide signature pad
+        signatureLabel.setVisibility(GONE);
+        signaturePad.setVisibility(GONE);
+        clear.setVisibility(GONE);
+        done.setVisibility(GONE);
 
         passengerPhoto.setImageResource(0);
         Picasso.get().load(App.CONST_PHOTO_URL + job.getNoShowPhoto())
